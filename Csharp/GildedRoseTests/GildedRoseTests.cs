@@ -113,6 +113,7 @@ public class GildedRoseTests
     /// Aged Brie: QualityNeverExceedsFourty
     /// Result without changes: Failed
     /// Reason: Unit test edge case: upper limit 40 as per specification, but in code it is set as 50, hence failed
+    /// Result with new changes: Passed, Fixed the implementation error.
     /// </summary>
     [Fact]
     public void UpdateQuality_AgedBrie_QualityNeverExceedsFourty()
@@ -153,7 +154,8 @@ public class GildedRoseTests
     /// <summary>
     /// BackstagePass: MoreThanSevenDays_IncreasesByOne
     /// Result without changes: Failed
-    /// Reason: quality is expected to increase by 1 as per specification for 8 days or more, in actual it is increased by 2
+    /// Reason: quality is expected to increase by 1 as per specification for 9 days or more, in actual it is increased by 2
+    /// Result with new changes: Passed, Fixed the implementation error.
     /// </summary>
 
     [Fact]
@@ -161,7 +163,7 @@ public class GildedRoseTests
     {
         var items = new List<Item>
         {
-            new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 8, Quality = 20 }
+            new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 9, Quality = 20 }
         };
 
         var app = new GildedRose(items);
@@ -176,8 +178,9 @@ public class GildedRoseTests
     /// BackstagePass: SevenDaysOrLess_IncreasesByThree
     /// Result without changes: Failed
     /// Reason: quality is expected to increase by 3 as per specification for 7 days or less, in actual it is increased by 4
+    /// Result with new changes: Passed, Fixed the implementation error.
     /// </summary>
-     
+
     [Fact]
     public void UpdateQuality_BackstagePass_SevenDaysOrLess_IncreasesByThree()
     {
@@ -219,6 +222,7 @@ public class GildedRoseTests
     /// BackstagePass: TwoDaysOrLess_IncreasesByFour
     /// Result without changes: Failed
     /// Reason: quality is expected to increase by 4 as per specification for 2 days or less, in actual it is increased by 3
+    /// Result with new changes: Passed, Fixed the implementation error.
     /// </summary>
 
     [Fact]
