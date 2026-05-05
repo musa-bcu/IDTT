@@ -42,7 +42,7 @@ The solution was implemented in C# (.NET X) using the pre-configured xUnit test 
 
 ## Key Improvements
 
-1. Refactoring of existing logic
+### 1. Refactoring of existing logic
 
 The original implementation contained a large, conditional-heavy UpdateQuality() method.
 
@@ -55,7 +55,7 @@ Removed magic numbers by introducing named constants in respective item type.
 
 This makes it significantly easier to introduce new item types without modifying existing logic heavily.
 
-2. New Feature: Conjured Items
+### 2. New Feature: Conjured Items
 
 Implemented support for Conjured items, as required.
 
@@ -65,12 +65,12 @@ Before sell date: -2 Quality per day
 After sell date: -4 Quality per day
 
 
-3. Bug Fixes
+### 3. Bug Fixes
 
 Identified and fixed 4 logic defects during test coverage expansion.
 These included edge-case errors in SellIn transition handling and incorrect Quality updates for specific item types.
 
-4. Unit Testing Improvements
+### 4. Unit Testing Improvements
 
 A total of ~15 unit tests were added to improve coverage and prevent regressions.
 Coverage includes:
@@ -81,11 +81,11 @@ Coverage includes:
 - Backstage Passes tiered increases and expiry behaviour
 - Conjured item accelerated degradation
 
-Result:
+#### Result:
 ~4 previously failing tests were identified during development
 All failing cases were fixed and validated through automated testing
 
-5. Design Decisions
+### 5. Design Decisions
 
 To improve maintainability, the following decisions were made:
 
@@ -94,5 +94,5 @@ Avoided modifying the Item class (as per constraints)
 Focused on extensibility for future item types
 Prioritised readability over over-engineered abstractions
 
-Trade-off:
+### Trade-off:
 A simple, explicit design was chosen over heavy design patterns to maintain clarity while still improving structure.
